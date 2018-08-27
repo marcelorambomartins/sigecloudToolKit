@@ -368,7 +368,7 @@ function codeBar(){
 				$codebar = substr($CNPJ,0,$tamanhoLivre) . $conteudo;  // se positivo
 			}else{
 				$posInicio = abs($tamanhoLivre); // deixa o numero possitivo
-				$codebar = substr($conteudo,0,$tamanhoCodeBar) 		// se negativo
+				$codebar = substr($conteudo,$posInicio,$tamanhoCodeBar);		// se negativo
 			}
 
 
