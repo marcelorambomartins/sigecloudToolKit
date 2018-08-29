@@ -16,6 +16,7 @@
 		const ESTOQUE_UNIDADE = 11;
 		const PRECO_CUSTO = 12;
 		const LUCRO_DINHEIRO = 13;
+		const ID = 15;
 
 	}//fim da classe
 
