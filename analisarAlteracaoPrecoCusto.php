@@ -85,11 +85,12 @@ function analisarPrecoCusto($xml){
 		$xmlPrecoCusto = XML::obterPrecoCustoProduto($celulaCodigo, $xml);
 
 		if($xmlPrecoCusto){
+			//$xmlPrecoCusto = number_format($xmlPCusto, 2, ".");
 
 			if($xmlPrecoCusto != $celulaPrecoCusto){
-				echo "DIF \t" . $celulaNome . "\t" . $celulaPrecoCusto . " \t " . $xmlPrecoCusto;
+				echo "DIF - " . $celulaCodigo . " - " . $celulaNome . " - " . $celulaPrecoCusto . " - " . $xmlPrecoCusto . "<br>";
 			}else{
-				echo "IGU \t" . $celulaNome . "\t" . $celulaPrecoCusto . " \t " . $xmlPrecoCusto;
+				//echo "IGU - " . $celulaNome . " - " . $celulaPrecoCusto . " - " . $xmlPrecoCusto . "<br>";
 			}
 
 		}
