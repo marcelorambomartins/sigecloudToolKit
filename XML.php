@@ -31,6 +31,20 @@ Class XML{
 		endforeach;
 	}//fim da funcao
 
+	static function obterQuantTotalProduto($xml){
+		$qtTotal = 0;
+
+		foreach($xml->NFe->infNFe->det as $produto): //percorre todos os produtos
+
+			$qtProduto = $produto->prod->qTrib; //retorna quantidade do produto
+			$qtTotal += $qtProduto;
+
+		endforeach;
+
+		return $qtTotal; //retorna quantidade total de produtos
+
+	}//fim da funcao
+
 
 	static function obterPrecoCustoProduto($codigoProduto,$xml){
 
