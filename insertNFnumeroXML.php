@@ -77,7 +77,7 @@ function insertNumeroNF($xml){
 		$linha = START_LINE;
 		$contador = 0;
 		$centena = 1;
-
+		$tagNF = "#NF";
 
 
 		for($linha; $linha <= LAST_LINE; $linha++){
@@ -93,7 +93,16 @@ function insertNumeroNF($xml){
 					$centena++;
 				}
 
-				$frase = $celulaNome . " #NF" . $numeroNFxml . "/" . $centena;
+				$pos = strpos($celulaNome, $tagNF);
+
+				if($pos != false){ // já existe uma NF vinculada ao produto
+
+					$nfNova = " #NF" . $numeroNFxml . "/" . $centena;
+					$frase = str_ireplace($nfVelha,$nfNova,$celulaNome);
+
+				}else{ // não existe uma NF vinculada ao produto
+					$frase = $celulaNome . " #NF" . $numeroNFxml . "/" . $centena;
+				}
 
 				inserirDado(Coluna::NOME, $linha, $frase);
 				$contador++;
