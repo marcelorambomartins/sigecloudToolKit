@@ -12,10 +12,7 @@ error_reporting(E_ALL);
 include 'phpexcel/Classes/PHPExcel.php';
 include 'XML.php';
 include 'EnumColunas.php';
-
-$planilha = "planilhas/planilhaprodutos_27-08-2018_16-12.xls";
-$xml = simplexml_load_file('planilhas/havefun.xml');
-
+include 'inputDoc.php';
 
 $objReader = new PHPExcel_Reader_Excel5();
 $objPHPExcel = $objReader->load($planilha);

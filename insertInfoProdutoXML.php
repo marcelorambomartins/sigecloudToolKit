@@ -11,9 +11,7 @@ error_reporting(E_ALL);
 // Incluimos a classe PHPExcel
 include 'phpexcel/Classes/PHPExcel.php';
 include 'XML.php';
-
-$planilha = "planilhas/planilhaprodutos_24-08-2018_08-31.xls";
-$xml = simplexml_load_file('planilhas/arquivo.xml');
+include 'inputDoc.php';
 
 
 $objReader = new PHPExcel_Reader_Excel5();

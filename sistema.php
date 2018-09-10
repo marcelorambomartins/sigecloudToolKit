@@ -39,9 +39,7 @@ error_reporting(E_ALL);
 
 // Incluimos a classe PHPExcel
 include  'phpexcel/Classes/PHPExcel.php';
-
-$planilha = "planilhas/planilhaprodutos_27-08-2018_09-36.xls";
-
+include 'inputDoc.php';
 
 $objReader = new PHPExcel_Reader_Excel5();
 $objPHPExcel = $objReader->load($planilha);
@@ -56,13 +54,13 @@ define('LAST_LINE', lastLine($linha));
 define('START_LINE', 2);
 
 //chamada de funcoes
-ajustaNome();
-insertNF();
 insertCategoria();
+//ajustaNome();
+//insertNF();
 insertMarca();
 insertCfop();
 calculaPreco();
-codeBar();
+//codeBar();
 //insertSiglaCodigo();
 //situacaoTributaria();
 
@@ -115,7 +113,7 @@ function lastLine($linha){
 function insertMarca(){
 	$coluna = 1; //coluna da Marca
 	$linha = START_LINE;
-	$marca = "OGOCHI";
+	$marca = "GERACAO BRASIL";
 	for($linha; $linha <= LAST_LINE; $linha++){
 		$celulaAtual = obterDado($coluna, $linha);
 
@@ -132,7 +130,7 @@ function insertCategoria(){
 	$colunaCategoria = 0;
 	$colunaMarca = 1;
 	$linha = START_LINE;
-	$categoria = "MAS";
+	$categoria = "INF";
 
 
 	for($linha; $linha <= LAST_LINE; $linha++){
@@ -258,7 +256,7 @@ function insertCfop(){
 function calculaPreco(){ //calcular o preco
 	$coluna = 12; // coluna do preco de custo
 	$linha = START_LINE;
-	$percentual = 1.06;
+	$percentual = 1.1;
 	$coef = 1; //nota cheia, meia nota, um terço, um quarto  ---- 0.3 30% de desconto
 
 	for($linha; $linha <= LAST_LINE; $linha++){
