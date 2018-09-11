@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" type='text/css'>
+    <script type="text/javascript" src="ferramentas.js"></script>
   </head>
   <body class="container">
     <div class="jumbotron">
@@ -26,7 +27,7 @@
 		        </div>
 		        <div class="panel-body">
               <p>
-                <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
+                <button onclick="ferramenta('qtTotalProduto')" type="button" class="btn btn-primary">Exibir Quantidade Total de Produtos no XML</button>
               </p>
             </div>
         </div>
@@ -38,7 +39,7 @@
 		        </div>
 		        <div class="panel-body">
               <p>
-                <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
+                <button onclick="ferramenta('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
               </p>
             </div>
         </div>
@@ -50,7 +51,13 @@
 		        </div>
 		        <div class="panel-body">
               <p>
-                <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
+                <button onclick="ferramenta('insertNumeroNF')" type="button" class="btn btn-primary">Adicionar Numero da NF</button>
+              </p>
+              <p>
+              <button onclick="ferramenta('insertQuantProduto')" type="button" class="btn btn-primary">Adicionar Quantidade de Produtos</button>
+              </p>
+              <p>
+                <button onclick="ferramenta('insertInfoProduto')" type="button" class="btn btn-primary">Inserir a Informação Adicional do Produto</button>
               </p>
             </div>
         </div>
