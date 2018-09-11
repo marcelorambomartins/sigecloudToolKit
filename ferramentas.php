@@ -13,23 +13,48 @@
   </head>
   <body class="container">
     <div class="jumbotron">
-      <h1 class="display-4">Ferramentas</h1>
-      <hr class="my-4">
+      <h2 class="display-4">Ferramentas</h2>
     </div>
+    <div class="row"> <!--Row dos inputDoc-->
+      <p>Aqui vai os inputDoc</p>
+    </div><!--Fim da Col-->
     <div class="row">
-      <div class="col-sm-3"></div><!--Fim da Col-->
-      <div class="col-sm-3">
-        <p>
-          <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
-        </p>
-        <p>
-          <button type="button" class="btn btn-primary">Adicionar Quantidade de Produtos</button>
-        </p>
-        <p>
-          <button type="button" class="btn btn-primary">Inserir o Código do Produto na Descrição</button>
-        </p>
+      <div class="col-sm-4">
+        <div class="panel panel-default text-center">
+		        <div class="panel-heading">
+		          <h3>Manipular XML</h3>
+		        </div>
+		        <div class="panel-body">
+              <p>
+                <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
+              </p>
+            </div>
+        </div>
       </div><!--Fim da Col-->
-      <div class="col-sm-3"></div><!--Fim da Col-->
+      <div class="col-sm-4">
+        <div class="panel panel-default text-center">
+		        <div class="panel-heading">
+		          <h3>Manipular XLS</h3>
+		        </div>
+		        <div class="panel-body">
+              <p>
+                <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
+              </p>
+            </div>
+        </div>
+      </div><!--Fim da Col-->
+      <div class="col-sm-4">
+        <div class="panel panel-default text-center">
+		        <div class="panel-heading">
+		          <h3>Manipular XML e XLS</h3>
+		        </div>
+		        <div class="panel-body">
+              <p>
+                <button type="button" class="btn btn-primary">Adicionar Numero NF</button>
+              </p>
+            </div>
+        </div>
+      </div><!--Fim da Col-->
     </div><!--Fim da Row-->
   </body>
 </html>
