@@ -31,6 +31,8 @@ Class XML{
 		endforeach;
 	}//fim da funcao
 
+
+
 	static function obterQuantTotalProduto($xml){
 		$qtTotal = 0;
 
@@ -52,6 +54,13 @@ Class XML{
 
 	}//fim da funcao
 
+	static function salvarXML($xml, $caminho){
+
+		$arquivo = fopen($caminho, 'w+');
+		$escreve = fwrite($arquivo, $xml->asXML());   //$xml->asXML()    //converte objeto em XML
+		fclose($arquivo);
+
+	}//fim da funcao
 
 	static function obterPrecoCustoProduto($codigoProduto,$xml){
 
@@ -76,6 +85,44 @@ Class XML{
 			}
 
 		endforeach;
+	}//fim da funcao
+
+	static function verificaCodigoDuplicado($xml){
+
+		$linhasXML = obterNumeroLinhas($xml);
+
+		for($i = 0; $i < $linhasXML; $i++){
+			$codigo1 = obterCodigoItem($i);
+
+			for($j = $i+1; $j < $linhasXML; $j++){
+				$codigo2 = obterCodigoItem($j);
+
+				if($codigo1 == $codigo2){
+					//alterar o codigo
+				}
+			}
+
+		}
+
+	}//fim da funcao
+
+	static function obterNumeroLinhas($xml){
+		$numeroLinhas = 0;
+
+		foreach($xml->NFe->infNFe->det as $produto): //percorre todos os produtos
+			$numeroLinhas++;
+		endforeach;
+
+		return $numeroLinhas;
+
+	}//fim da funcao
+
+	static function obterCodigoItem($xml, $nItem){   //$nItem começa em zero
+			return $xml->NFe->infNFe->det[$nItem]->prod->cProd;
+	}//fim da funcao
+
+	static function obterNomeItem($xml, $nItem){   //$nItem começa em zero
+			return $xml->NFe->infNFe->det[$nItem]->prod->xProd;
 	}//fim da funcao
 
 }//fim da classe
