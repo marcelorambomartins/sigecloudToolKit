@@ -52,6 +52,7 @@ Class XML{
 
 	}//fim da funcao
 
+
 	static function obterPrecoCustoProduto($codigoProduto,$xml){
 
 		foreach($xml->NFe->infNFe->det as $produto): //percorre todos os produtos
