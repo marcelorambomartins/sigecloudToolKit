@@ -125,6 +125,24 @@ Class XML{
 			return $xml->NFe->infNFe->det[$nItem]->prod->xProd;
 	}//fim da funcao
 
+	static function obterTamanhoNomeItem($xml, $nItem){   //$nItem começa em zero
+			$tamanho = false;
+			$nome = XML::obterNomeItem($xml, $nItem);
+
+			$listaTamanhos = array(' PP',' P',' M',' G',' GG',' G G',' 14');
+
+			foreach ($listaTamanhos as $item) {
+
+				$posicao = strrchr($nome, $item);
+
+				if($posicao != false){
+					$tamanho = $posicao;
+				}
+			}
+
+			return $tamanho;
+	}//fim da funcao
+
 }//fim da classe
 
 ?>
