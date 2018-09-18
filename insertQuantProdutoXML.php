@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 // Incluimos a classe PHPExcel
 include 'phpexcel/Classes/PHPExcel.php';
 include 'XML.php';
-include 'EnumColunas.php';
+include 'Constante.php';
 include 'inputDoc.php';
 
 $objReader = new PHPExcel_Reader_Excel5();

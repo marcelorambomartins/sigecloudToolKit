@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 
 // Incluimos a classe PHPExcel
 include 'phpexcel/Classes/PHPExcel.php';
-include 'EnumColunas.php';
+include 'Constante.php';
 
 $planilha = "planilhas/planilhaprodutos_03-09-2018_09-31.xls";
 

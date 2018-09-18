@@ -20,4 +20,12 @@
 
 	}//fim da classe
 
+
+	class Inicial{
+
+		const LINHA = 2;	// linha começa em 2  // linha 1 é o cabeçalho
+		const COLUNA = 0; // coluna começa em zero
+		
+	}
+
 ?>
