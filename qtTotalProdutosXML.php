@@ -1,11 +1,11 @@
 <?php
 
 	include 'XML.php';
-
-	$xml = simplexml_load_file('planilhas/rikam.xml');
+	include 'inputDoc.php';
 
 	$qt = XML::obterQuantTotalProduto($xml);
+	$nf = XML::obterNumeroNF($xml);
 
-	echo $qt;
+	echo "Existe " . $qt . " produtos na NF: " . $nf;
 
 ?>
