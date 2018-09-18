@@ -8,56 +8,52 @@ include 'phpexcel/Classes/PHPExcel.php';
 
 		static function obterCodeBar($planilhaCodeBar, $codigo){
 
-			return inicializar($planilhaCodeBar);
-			//$valor = obterDado(0, 2);
+			CodigoBarras::inicializar($planilhaCodeBar);
+			//$valor = CodigoBarras::obterDado(0, 2);
 			//return $valor;
 
 		}//fim da funcao
 
 
-		function inicializar($planilhaCodeBar){
+		static function inicializar($planilhaCodeBar){
 
-			return "inicializar";
-
-			/*
 	 		$objReader = new PHPExcel_Reader_Excel5();
 	 		$objPHPExcel = $objReader->load($planilhaCodeBar);
 	 		$objPHPExcel->setActiveSheetIndex(0);
 
-
-	 		$coluna = 0; // coluna começa em zero
-	 		$linha = 2;	// linha começa em um
-
-
-	 		define('LAST_LINE', lastLine($linha));
+	 		define('LAST_LINE', CodigoBarras::lastLine(2, $objPHPExcel));
 	 		define('START_LINE', 2);
-			*/
+
+			echo LAST_LINE;
+
 
 	 	}// fim da funcao
 
-		function obterDado($coluna, $linha){
-			global $objPHPExcel;
+		static function obterDado($coluna, $linha, $objPHPExcel){
 
-			return $objPHPExcel->getActiveSheet()->getCellByColumnAndRow($coluna, $linha)->getValue(); //obtem
+			return '1';
+			//global $objPHPExcel;
+
+			//return $objPHPExcel->getActiveSheet()->getCellByColumnAndRow($coluna, $linha)->getValue(); //obtem
 		}
 
 
-		function inserirDado($coluna, $linha, $conteudo){
+		static function inserirDado($coluna, $linha, $conteudo, $objPHPExcel){
 			global $objPHPExcel;
 
 			return $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($coluna, $linha, $conteudo); // insere
 		}
 
 
-		function lastLine($linha){
+		static function lastLine($linha, $objPHPExcel){
 
 			$coluna = 0; // coluna dos code de barras
 
-			$celulaAtual = obterDado($coluna, $linha);
+			$celulaAtual = CodigoBarras::obterDado($coluna, $linha, $objPHPExcel);
 
 			while(!empty($celulaAtual)){
 				$linha++;
-				$celulaAtual = obterDado($coluna, $linha);
+				$celulaAtual = CodigoBarras::obterDado($coluna, $linha, $objPHPExcel);
 			}
 
 			return $linha - 1;
@@ -65,38 +61,6 @@ include 'phpexcel/Classes/PHPExcel.php';
 
 	}// fim da classe
 
-
-
-
-
-
-
-
-
-##############################################################################
-
-
-function insertCodigoNome(){
-	$colunaCodigo = 3;			//coluna do codigo do produto
-	$colunaNome = 5;            //coluna nome do produto
-	$linha = START_LINE;
-
-	for($linha; $linha <= LAST_LINE; $linha++){
-		$celulaCodigo = obterDado($colunaCodigo, $linha);
-		$celulaNome = obterDado($colunaNome, $linha);
-		$celulaLucroDinheiro = obterDado(Coluna::LUCRO_DINHEIRO, $linha);
-
-		if($celulaLucroDinheiro == 0){
-
-			$frase = $celulaCodigo . " - " . $celulaNome;
-
-			inserirDado($colunaNome, $linha, $frase);
-		}
-
-	}
-
-	echo "codigo no produto: OK<br>";
-}
 
 
 
