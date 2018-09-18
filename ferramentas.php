@@ -14,10 +14,23 @@
   </head>
   <body class="container">
     <div class="jumbotron">
-      <h2 class="display-4">Ferramentas</h2>
+      <h2 class="display-2">Ferramentas</h2>
     </div>
     <div class="row"> <!--Row dos inputDoc-->
-      <p>Aqui vai os inputDoc</p>
+      <div class="col-sm-4">
+          <label>XML</label>
+          <input type="file" id="inputXML" required="required">
+      </div>
+      <div class="col-sm-4">
+        <label>XLS</label>
+          <input type="file" id="inputXLS" required="required">
+      </div>
+      <div class="col-sm-4">
+        <label>DOC</label>
+          <input type="file" id="inputDOC" required="required">
+      </div>
+      <hr><hr><hr>
+
     </div><!--Fim da Col-->
     <div class="row">
       <div class="col-sm-4">
