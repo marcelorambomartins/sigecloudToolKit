@@ -5,6 +5,7 @@ include  'phpexcel/Classes/PHPExcel.php';
 Class Excel{
 
 	public $excel;
+	public $ultimaLinha;
 
 	function __construct(){}
 
@@ -14,6 +15,7 @@ Class Excel{
 		$objPHPExcel = $objReader->load($planilha);
 		$objPHPExcel->setActiveSheetIndex(0);
 		$this->excel = $objPHPExcel;
+		$this->lastLine();
 
 	}//fim da funcao
 
@@ -36,6 +38,21 @@ Class Excel{
 		$this->excel->getActiveSheet()->setCellValueByColumnAndRow($coluna, $linha, $conteudo); // insere
 	}//fim da funcao
 
+
+	function lastLine(){
+
+		$coluna = 0; // coluna das ID
+		$linha = 2;
+
+		$celulaAtual = $this->obterDado($coluna, $linha);
+
+		while(!empty($celulaAtual)){
+			$linha++;
+			$celulaAtual = $this->obterDado($coluna, $linha);
+		}
+
+		$this->ultimaLinha = $linha - 1;
+	}
 
 }//fim da classe
 

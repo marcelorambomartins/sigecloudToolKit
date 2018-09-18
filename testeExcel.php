@@ -9,6 +9,8 @@
 
 	$excel->iniciar($planilha);
 
-	print_r($excel->getExcel());
+	//print_r($excel->ultimaLinha);
+
+	echo $excel->ultimaLinha;
 
 ?>
