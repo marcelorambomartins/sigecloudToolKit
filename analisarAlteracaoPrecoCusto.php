@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 include 'phpexcel/Classes/PHPExcel.php';
 include 'XML.php';
 include 'Constante.php';
-include 'inputDoc.php';
+include 'inputFile.php';
 
 
 $objReader = new PHPExcel_Reader_Excel5();

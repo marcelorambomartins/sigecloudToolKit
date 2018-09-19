@@ -1,7 +1,7 @@
 <?php
 
 	include 'XML.php';
-	include 'inputDoc.php';
+	include 'inputFile.php';
 
 	$linhasXML = XML::obterNumeroLinhas($xml);
 

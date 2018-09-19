@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 
 // Incluimos a classe PHPExcel
 include 'Constante.php';
-include 'inputDoc.php';
+include 'inputFile.php';
 include 'Excel.php';
 
 

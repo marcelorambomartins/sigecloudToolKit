@@ -1,7 +1,7 @@
 <?php
 
 	include 'XML.php';
-	include 'inputDoc.php';
+	include 'inputFile.php';
 
 	$qt = XML::obterQuantTotalProduto($xml);
 	$nf = XML::obterNumeroNF($xml);
