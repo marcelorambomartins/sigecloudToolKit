@@ -1,16 +1,10 @@
 <?php
 
+	include 'xls/ManipulaXLS.php';
+	include 'inputFile.php';
 
-	include 'Excel.php';
+	$result = ManipulaXLS::insertCodigoInNome($planilha,$xml);
 
-	$planilha = "planilhas/dream.xls";
-
-	$excel = new Excel();
-
-	$excel->iniciar($planilha);
-
-	//print_r($excel->ultimaLinha);
-
-	echo $excel->ultimaLinha;
+	echo $result;
 
 ?>
