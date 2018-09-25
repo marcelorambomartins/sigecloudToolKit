@@ -1,21 +1,19 @@
 <?php
-  include '..xls/ManipulaXLS.php';
-  include 'inputFile.php';
+  include '../xls/ManipulaXLS.php';
+  include '../inputFile.php';
 
   $post = json_decode(file_get_contents("php://input"));
-    echo "aqui";
+    print_r($post);
 
-    /*
-  	$action = $post->action;
 
-      if(function_exists($action)){
+      if(function_exists($post->action)){
 
-    		if($action == "insertCodigoProduto"){
-    			call_user_func($action);
-    		}else if($action == "escalonador"){
-    			call_user_func($action,$post->status);
+    		if($post->action == "insertCodigoProduto"){
+    			call_user_func($post->action);
+    		}else if($post->action == "escalonador"){
+    			call_user_func($post->action,$post->status);
     		}else{
-    			call_user_func($action);
+    			call_user_func($post->action);
     		}
 
   	}else{
@@ -23,9 +21,13 @@
   	}
 
     function insertCodigoProduto(){
+      global $xml;
+      global $planilha;
+
       ManipulaXLS::insertCodigoInNome($planilha,$xml);
+      echo "ok";
     }
 
-    */
+
 
 ?>

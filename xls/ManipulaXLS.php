@@ -1,8 +1,8 @@
 <?php
 
-include 'Constante.php';
-include 'Excel.php';
-include 'XML.php';
+include '../Constante.php';
+include '../Excel.php';
+include '../XML.php';
 
 	class ManipulaXLS {
 
