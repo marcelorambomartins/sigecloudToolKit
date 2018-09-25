@@ -52,9 +52,7 @@
 		          <h3>Manipular XLS</h3>
 		        </div>
 		        <div class="panel-body">
-              <p>
-                <button ng-click="ferramenta('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
-              </p>
+              <!--Aqui vai os botoes-->
             </div>
         </div>
       </div><!--Fim da Col-->
@@ -64,6 +62,9 @@
 		          <h3>Manipular XML e XLS</h3>
 		        </div>
 		        <div class="panel-body">
+              <p>
+                <button ng-click="ferramenta('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
+              </p>
               <p>
                 <button ng-click="ferramenta('insertNumeroNF')" type="button" class="btn btn-primary">Adicionar Numero da NF</button>
               </p>

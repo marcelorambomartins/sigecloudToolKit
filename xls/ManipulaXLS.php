@@ -122,8 +122,8 @@ include '../XML.php';
 			$excel->iniciar($planilha);
 
 			for($linha; $linha <= $excel->ultimaLinha; $linha++){
-				$celulaCodigo = $excel->obterDado($colunaCodigo, $linha);
-				$celulaNome = $excel->obterDado($colunaNome, $linha);
+				$celulaCodigo = $excel->obterDado(Coluna::CODIGO_NFE, $linha);
+				$celulaNome = $excel->obterDado(Coluna::NOME, $linha);
 
 				$infoProduto = XML::obterInfoProduto($celulaCodigo, $xml);
 
@@ -137,7 +137,7 @@ include '../XML.php';
 
 					$frase = $infoProduto . " - " . $celulaNome;
 
-					$excel->inserirDado($colunaNome, $linha, $frase);
+					$excel->inserirDado(Coluna::NOME, $linha, $frase);
 					$qt++;
 				}
 			}//fim do for
