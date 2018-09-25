@@ -112,5 +112,41 @@ include '../XML.php';
 
 		}//fim da funcao
 
+
+
+		static function insertInfoInNome($planilha, $xml){
+			$qt = 0;
+			$linha = Inicial::LINHA;
+
+			$excel = new Excel();
+			$excel->iniciar($planilha);
+
+			for($linha; $linha <= $excel->ultimaLinha; $linha++){
+				$celulaCodigo = $excel->obterDado($colunaCodigo, $linha);
+				$celulaNome = $excel->obterDado($colunaNome, $linha);
+
+				$infoProduto = XML::obterInfoProduto($celulaCodigo, $xml);
+
+				if($infoProduto){
+					$tamanhoInfo = strlen($infoProduto);
+
+					if($tamanhoInfo > 10){
+						$info = substr($infoProduto,0,10);
+						$infoProduto = $info;
+					}
+
+					$frase = $infoProduto . " - " . $celulaNome;
+
+					$excel->inserirDado($colunaNome, $linha, $frase);
+					$qt++;
+				}
+			}//fim do for
+
+			$excel->salvar($planilha);
+
+			return $qt . " linhas alteradas";
+
+		}//fim da funcao
+
 	}//fim da classe
 ?>
