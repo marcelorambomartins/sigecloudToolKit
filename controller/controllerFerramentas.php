@@ -9,9 +9,9 @@
       if(function_exists($post->action)){
 
     		if($post->action == "insertCodigoProduto"){
-    			call_user_func($post->action);
-    		}else if($post->action == "escalonador"){
-    			call_user_func($post->action,$post->status);
+    			call_user_func($post->action, $planilha, $xml);
+    		}else if($post->action == "insertNumeroNF"){
+    			call_user_func($post->action, $planilha, $xml);
     		}else{
     			call_user_func($post->action);
     		}
@@ -20,12 +20,12 @@
   		echo "<br>funcao nao definida";
   	}
 
-    function insertCodigoProduto(){
-      global $xml;
-      global $planilha;
+    function insertCodigoProduto($planilha,$xml){
+      echo ManipulaXLS::insertCodigoInNome($planilha,$xml);
+    }
 
-      ManipulaXLS::insertCodigoInNome($planilha,$xml);
-      echo "ok";
+    function insertNumeroNF($planilha,$xml){
+      echo ManipulaXLS::insertNumeroNF($planilha,$xml);
     }
 
 
