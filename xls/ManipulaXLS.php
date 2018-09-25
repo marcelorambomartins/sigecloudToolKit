@@ -80,5 +80,37 @@ include '../XML.php';
 			return $qt . " linhas alteradas";
 
 		}//fim da funcao
+
+
+
+		static function insertQuantInNome($planilha, $xml){
+			$qt = 0;
+			$linha = Inicial::LINHA;
+
+			$excel = new Excel();
+			$excel->iniciar($planilha);
+
+			for($linha; $linha <= $excel->ultimaLinha; $linha++){
+				$celulaCodigo = $excel->obterDado(Coluna::CODIGO_NFE, $linha);
+				$celulaNome = $excel->obterDado(Coluna::NOME, $linha);
+
+				$quantProduto = XML::obterQuantProduto($celulaCodigo, $xml);
+
+				if($quantProduto){
+					$quantProd = intval($quantProduto);
+
+					$frase = $celulaNome . " #QT" . $quantProd;
+
+					$excel->inserirDado(Coluna::NOME, $linha, $frase);
+					$qt++;
+				}
+			}// fim do for
+
+			$excel->salvar($planilha);
+
+			return $qt . " linhas alteradas";
+
+		}//fim da funcao
+
 	}//fim da classe
 ?>

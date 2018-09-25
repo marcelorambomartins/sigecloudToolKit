@@ -12,6 +12,8 @@
     			call_user_func($post->action, $planilha, $xml);
     		}else if($post->action == "insertNumeroNF"){
     			call_user_func($post->action, $planilha, $xml);
+        }else if($post->action == "insertQuantProduto"){
+          call_user_func($post->action, $planilha, $xml);
     		}else{
     			call_user_func($post->action);
     		}
@@ -27,6 +29,12 @@
     function insertNumeroNF($planilha,$xml){
       echo ManipulaXLS::insertNumeroNF($planilha,$xml);
     }
+
+    function insertQuantProduto($planilha,$xml){
+      echo ManipulaXLS::insertQuantInNome($planilha,$xml);
+    }
+
+
 
 
 
