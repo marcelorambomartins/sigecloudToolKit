@@ -20,18 +20,17 @@
     <div class="row"> <!--Row dos inputDoc-->
       <div class="col-sm-4">
           <label>XML</label>
-          <input type="file" id="inputXML" required="required">
+          <input type="file" name="inputXML" id="inputXML" required="required">
       </div>
       <div class="col-sm-4">
         <label>XLS</label>
-          <input type="file" id="inputXLS" required="required">
+          <input type="file" name="inputXLS" id="inputXLS" required="required">
       </div>
       <div class="col-sm-4">
         <label>DOC</label>
-          <input type="file" id="inputDOC" required="required">
+          <input type="file" name="inputDOC" id="inputDOC" required="required">
       </div>
       <hr><hr><hr>
-
     </div><!--Fim da Col-->
     <div class="row">
       <div class="col-sm-4">
