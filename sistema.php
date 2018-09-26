@@ -113,7 +113,7 @@ function lastLine($linha){
 function insertMarca(){
 	$coluna = 1; //coluna da Marca
 	$linha = START_LINE;
-	$marca = "STAR SUL";
+	$marca = "JEITO DE CRIANÇA";
 	for($linha; $linha <= LAST_LINE; $linha++){
 		$celulaAtual = obterDado($coluna, $linha);
 
@@ -130,7 +130,7 @@ function insertCategoria(){
 	$colunaCategoria = 0;
 	$colunaMarca = 1;
 	$linha = START_LINE;
-	$categoria = "MAS";
+	$categoria = "INF";
 
 
 	for($linha; $linha <= LAST_LINE; $linha++){
@@ -256,7 +256,7 @@ function insertCfop(){
 function calculaPreco(){ //calcular o preco
 	$coluna = 12; // coluna do preco de custo
 	$linha = START_LINE;
-	$percentual = 1;
+	$percentual = 1.06;
 	$coef = 0.5; //nota cheia, meia nota, um terço, um quarto  ---- 0.3 30% de desconto
 
 	for($linha; $linha <= LAST_LINE; $linha++){
@@ -335,7 +335,7 @@ function codeBar(){
 	$colunaCodeBar = 6;
 	$colunaCodigo = 3;
 	$linha = START_LINE;
-	$CNPJ = 9194207000119; // 8 primeiros numero base, os 4 proximos numero das filiais e os dois ultimos digito verificador.
+	$CNPJ = 82694142000160; // 8 primeiros numero base, os 4 proximos numero das filiais e os dois ultimos digito verificador.
 
 	for($linha; $linha <= LAST_LINE; $linha++){
 		$celulaCodeBar = obterDado($colunaCodeBar, $linha);
