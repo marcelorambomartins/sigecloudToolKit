@@ -31,6 +31,12 @@
           <input type="file" name="inputDOC" id="inputDOC" required="required">
       </div>
       <hr><hr><hr>
+      <div id="result" class="alert alert-success text-center" ng-show="dados.result">
+        <p>{{dados.result}}</p>
+      </div>
+      <div id="erro" class="alert alert-danger text-center" ng-show="dados.erro">
+        <p>{{dados.erro}}</p>
+      </div>
     </div><!--Fim da Col-->
     <div class="row">
       <div class="col-sm-4">
@@ -40,7 +46,7 @@
 		        </div>
 		        <div class="panel-body">
               <p>
-                <button ng-click="ferramenta('qtTotalProduto')" type="button" class="btn btn-primary">Exibir Quantidade Total de Produtos no XML</button>
+                <button ng-click="validacao('qtTotalProdutos')" type="button" class="btn btn-primary">Exibir Quantidade Total de Produtos no XML</button>
               </p>
             </div>
         </div>
@@ -65,7 +71,7 @@
                 <button ng-click="ferramenta('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
               </p>
               <p>
-                <button ng-click="ferramenta('insertNumeroNF')" type="button" class="btn btn-primary">Adicionar Numero da NF</button>
+                <button ng-click="validacao('insertNumeroNF')" type="button" class="btn btn-primary">Adicionar Numero da NF</button>
               </p>
               <p>
               <button ng-click="ferramenta('insertQuantProduto')" type="button" class="btn btn-primary">Adicionar Quantidade de Produtos</button>

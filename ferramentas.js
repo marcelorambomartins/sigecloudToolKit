@@ -1,45 +1,13 @@
 var myapp = angular.module('myapp', []);
 
 myapp.controller('mainController',function($scope,$http){
-
-  $scope.ferramenta = function (action){
-
-    if($('#inputXML')[0].files.length != 0){
-      var caminho = "D:/Perfil/Usuario/Downloads/";
-      nameXML = caminho + $("#inputXML")[0].files[0].name;
-    }else{
-      nameXML = '';
-    }
-
-    if($('#inputXLS')[0].files.length != 0){
-      var caminho = "D:/Perfil/Usuario/Downloads/";
-      nameXLS = caminho + $("#inputXLS")[0].files[0].name;
-    }else{
-      nameXLS = '';
-    }
-
-    if($('#inputDOC')[0].files.length != 0){
-      var caminho = "D:/Perfil/Usuario/Downloads/";
-      nameDOC = caminho + $("#inputDOC")[0].files[0].name;
-    }else{
-      nameDOC = '';
-    }
-
-    /*
-    var inputFile = [];
-
-    inputFile.push($("#inputXML")[0].files[0].name);
-    inputFile.push($("#inputXLS")[0].files[0].name);
-    //inputFile.push($("#inputDOC")[0].files[0].name);
+  var inputFile = {};
+  inputFile.nameXML = '';
+  inputFile.nameXLS = '';
+  inputFile.nameDOC = '';
 
 
-    var tam1 = $('#inputXML')[0].files.length;
-    var tam2 = $('#inputXLS')[0].files.length;
-
-
-    var nameXML = $("#inputXML")[0].files;
-    var nameXLS = $("#inputXLS")[0].files[0].name;
-    */
+  $scope.ferramenta = function (action, inputFile){
 
     $http({
 					method: 'POST',
@@ -48,9 +16,9 @@ myapp.controller('mainController',function($scope,$http){
 					data:
 					{
 						action: action,
-            xml: nameXML,
-            planilha: nameXLS,
-            word: nameDOC
+            xml: inputFile.nameXML,
+            planilha: inputFile.nameXLS,
+            word: inputFile.nameDOC
 					}
 					}).then(function successCallback(response) {
 						console.log(response.data);
@@ -61,12 +29,88 @@ myapp.controller('mainController',function($scope,$http){
 
   }
 
+  $scope.validacao = function (action){
+
+      if(action == "qtTotalProdutos"){
+        var retorno = $scope.validaXML();
+        if(retorno.erro){
+          $scope.dados = retorno;
+        }else{
+          $scope.ferramenta(action, retorno.inputFile);
+        }
+      }else if(action == "insertNumeroNF"){
+        var retornoXML = $scope.validaXML();
+        var retornoXLS = $scope.validaXLS();
+        if(retornoXML.erro){
+          $scope.dados = retornoXML;
+          console.log(retornoXML);
+        }else if(retornoXLS.erro){
+          $scope.dados = retornoXLS;
+          console.log(retornoXLS);
+        }else{
+          console.log(retornoXML);
+          //$scope.ferramenta(action, inputFile);
+        }
+      }else{
+        //função DOC
+      }
+
+
+  }//fim da funcão
+
+  $scope.validaXML = function (){
+    retorno = "";
+
+    if($('#inputXML')[0].files.length != 0){
+      var caminho = "D:/Perfil/Usuario/Downloads/";
+      inputFile.nameXML = caminho + $("#inputXML")[0].files[0].name;
+      retorno = {inputFile};
+    }else{
+      retorno = {erro: "Você deve carregar um arquivo XML para usar essa função"};
+    }
+
+    return retorno;
+
+  }//fim da funcão
+
+
+  $scope.validaXLS = function (){
+    retorno = "";
+
+    if($('#inputXLS')[0].files.length != 0){
+      var caminho = "D:/Perfil/Usuario/Downloads/";
+      inputFile.nameXLS = caminho + $("#inputXLS")[0].files[0].name;
+      retorno = inputFile;
+    }else{
+      retorno = {erro: "Você deve carregar um arquivo XLS para usar essa função"};
+    }
+
+    return retorno;
+  }//fim da funcão
+
+
+  $scope.validaDOC = function (){
+    retorno = "";
+
+    if($('#inputDOC')[0].files.length != 0){
+      var caminho = "D:/Perfil/Usuario/Downloads/";
+      inputFile.nameDOC = caminho + $("#inputDOC")[0].files[0].name;
+      retorno = inputFile;
+    }else{
+      retorno = {erro: "Você deve carregar um arquivo DOC para usar essa função"};
+    }
+
+    return retorno;
+
+  }//fim da funcão
+
 });// fim do controller
 
 
 
 $(document).ready(function () {
   // verificação de clique
+  //$("#result").hide(); // desabita result ao iniciar
   $("button").click(function () {
 
     if(!$(this).disabled){
