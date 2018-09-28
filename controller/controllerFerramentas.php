@@ -1,9 +1,10 @@
 <?php
   include '../xls/ManipulaXLS.php';
   include_once '../XML.php';
-  //include '../inputFile.php';
+
 
   $post = json_decode(file_get_contents("php://input"));
+  print_r($post);
 
     $xml = simplexml_load_file($post->xml);
 

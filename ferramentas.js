@@ -8,7 +8,6 @@ myapp.controller('mainController',function($scope,$http){
 
 
   $scope.ferramenta = function (action, inputFile){
-
     $http({
 					method: 'POST',
 					url: 'controller/controllerFerramentas.php',
@@ -49,7 +48,7 @@ myapp.controller('mainController',function($scope,$http){
           console.log(retornoXLS);
         }else{
           console.log(retornoXML);
-          //$scope.ferramenta(action, inputFile);
+          $scope.ferramenta(action, inputFile);
         }
       }else{
         //função DOC
@@ -109,13 +108,13 @@ myapp.controller('mainController',function($scope,$http){
     // verificação de clique
     //$("#result").hide(); // desabita result ao iniciar
     $("button").click(function () {
-      if($scope.dados && !$scope.dados.erro){
-        if(!$(this).disabled){
-          // Desabilita o botao
-          $(this).prop('disabled', true);
-        }
-      }
 
+      if(!$(this).disabled){
+        $(this).prop('disabled', true);
+      }
+      if($scope.dados && $scope.dados.erro){
+        $(this).prop('disabled', false);
+      }
     });
   });
 
