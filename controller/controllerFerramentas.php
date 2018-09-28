@@ -1,9 +1,9 @@
 <?php
   include '../xls/ManipulaXLS.php';
+  include_once '../XML.php';
   //include '../inputFile.php';
 
   $post = json_decode(file_get_contents("php://input"));
-    print_r($post);
 
     $xml = simplexml_load_file($post->xml);
 
@@ -16,6 +16,8 @@
           call_user_func($post->action, $post->planilha, $xml);
         }else if($post->action == "insertInfoProduto"){
           call_user_func($post->action, $post->planilha, $xml);
+        }else if($post->action == "qtTotalProdutos"){
+          call_user_func($post->action, $xml);
     		}else{
     			call_user_func($post->action);
     		}
@@ -23,6 +25,9 @@
   	   }else{
   		     echo "<br>funcao nao definida";
   	   }
+
+
+###################################################################
 
 
     function insertCodigoProduto($planilha,$xml){
@@ -41,8 +46,10 @@
       echo ManipulaXLS::insertInfoInNome($planilha,$xml);
     }
 
-
-
-
+    function qtTotalProdutos($xml){
+      $qtTotal = XML::obterQuantTotalProduto($xml);
+      $frase = "Existe um total de " . $qtTotal . " produtos nesse XML";
+      echo $frase;
+    }
 
 ?>

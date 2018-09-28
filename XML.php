@@ -4,7 +4,7 @@
 
 # verificar a possibilidade de refatorar as funções de obter itens do XML
 
-Class XML{
+class XML{
 
 	static function obterInfoProduto($codigoProduto,$xml){
 

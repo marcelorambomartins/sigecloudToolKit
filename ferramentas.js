@@ -22,7 +22,7 @@ myapp.controller('mainController',function($scope,$http){
 					}
 					}).then(function successCallback(response) {
 						console.log(response.data);
-						$scope.dados = response.data;
+						$scope.dados = {result: response.data};
 					}, function errorCallback(response) {
 						console.log(response);
 					});
@@ -38,7 +38,7 @@ myapp.controller('mainController',function($scope,$http){
         }else{
           $scope.ferramenta(action, retorno.inputFile);
         }
-      }else if(action == "insertNumeroNF"){
+      }else if(action == "insertNumeroNF" || action == "insertCodigoProduto" || action == "insertQuantProduto" || action == "insertInfoProduto"){
         var retornoXML = $scope.validaXML();
         var retornoXLS = $scope.validaXLS();
         if(retornoXML.erro){
@@ -104,18 +104,19 @@ myapp.controller('mainController',function($scope,$http){
 
   }//fim da funcão
 
-});// fim do controller
 
+  $(document).ready(function () {
+    // verificação de clique
+    //$("#result").hide(); // desabita result ao iniciar
+    $("button").click(function () {
+      if($scope.dados && !$scope.dados.erro){
+        if(!$(this).disabled){
+          // Desabilita o botao
+          $(this).prop('disabled', true);
+        }
+      }
 
-
-$(document).ready(function () {
-  // verificação de clique
-  //$("#result").hide(); // desabita result ao iniciar
-  $("button").click(function () {
-
-    if(!$(this).disabled){
-      // Desabilita o botao
-      $(this).prop('disabled', true);
-    }
+    });
   });
-});
+
+});// fim do controller

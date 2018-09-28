@@ -68,16 +68,16 @@
 		        </div>
 		        <div class="panel-body">
               <p>
-                <button ng-click="ferramenta('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
+                <button ng-click="validacao('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
               </p>
               <p>
                 <button ng-click="validacao('insertNumeroNF')" type="button" class="btn btn-primary">Adicionar Numero da NF</button>
               </p>
               <p>
-              <button ng-click="ferramenta('insertQuantProduto')" type="button" class="btn btn-primary">Adicionar Quantidade de Produtos</button>
+              <button ng-click="validacao('insertQuantProduto')" type="button" class="btn btn-primary">Adicionar Quantidade de Produtos</button>
               </p>
               <p>
-                <button ng-click="ferramenta('insertInfoProduto')" type="button" class="btn btn-primary">Inserir a Informação Adicional do Produto</button>
+                <button ng-click="validacao('insertInfoProduto')" type="button" class="btn btn-primary">Inserir a Informação Adicional do Produto</button>
               </p>
             </div>
         </div>
