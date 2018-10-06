@@ -58,6 +58,9 @@
 		        </div>
 		        <div class="panel-body">
               <!--Aqui vai os botoes-->
+              <a href="#inputPreencherPlanilha">
+              <button ng-click="showme=true" type="button" class="btn btn-primary">Preencher Planilha</button>
+              </a>
             </div>
         </div>
       </div><!--Fim da Col-->
@@ -83,5 +86,41 @@
         </div>
       </div><!--Fim da Col-->
     </div><!--Fim da Row-->
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div id="inputPreencherPlanilha" ng-show="showme"><!--Row dos inputPreencherPlanilha-->
+          <p id="inputCategria">
+            <label>Categoria</label>
+            <input type="text" class="form-control" placeholder="insira uma Categoria existente no sistema"></input>
+          </p>
+          <p id="inputMarca">
+            <label>Marca</label>
+            <input type="text" class="form-control" placeholder="insira uma Marca existente no sistema"></input>
+          </p>
+          <p id="inputGruproTributario">
+            <label>Grupo Tributário</label>
+            <input type="text" class="form-control" placeholder="insira um Grupo Tributário existente no sistema"></input>
+          </p>
+          <p id="inputCFOP">
+            <label>CFOP</label>
+            <input type="text" class="form-control" placeholder="insira um CFOP existente no sistema"></input>
+          </p>
+          <p id="inputPercentualLucro">
+            <label>Percentual Lucro</label>
+            <input type="text" class="form-control" placeholder="insira um Percentual de Lucro"></input>
+          </p>
+          <p id="inputCoeficiente">
+            <label>Coeficiente</label>
+            <input type="text" class="form-control" placeholder="insira um coeficiente adicional"></input>
+          </p>
+          <p>
+          <button ng-click="#" type="button" class="btn btn-primary">Preencher Planilha</button>
+          </p>
+        </div><!--fim da div input-->
+      </div>
+      <div class="col-sm-4"></div>
+    </div><!--Fim da Row-->
+
   </body>
 </html>

@@ -4,7 +4,7 @@
 
 
   $post = json_decode(file_get_contents("php://input"));
-  print_r($post);
+  //print_r($post);
 
     $xml = simplexml_load_file($post->xml);
 
