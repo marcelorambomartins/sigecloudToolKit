@@ -27,8 +27,12 @@
           <input type="file" name="inputXLS" id="inputXLS" required="required">
       </div>
       <div class="col-sm-4">
+        <!--
         <label>DOC</label>
           <input type="file" name="inputDOC" id="inputDOC" required="required">
+
+        <button type=button ng-click="validaExcel()" class="btn btn-success">Validar Excel</button>
+        -->
       </div>
       <hr><hr><hr>
       <div id="result" class="alert alert-success text-center" ng-show="dados.result">
@@ -54,7 +58,7 @@
       <div class="col-sm-4">
         <div class="panel panel-default text-center">
 		        <div class="panel-heading">
-		          <h3>Manipular XLS</h3>
+		          <h3>Manipular Excel</h3>
 		        </div>
 		        <div class="panel-body">
               <!--Aqui vai os botoes-->
@@ -67,7 +71,7 @@
       <div class="col-sm-4">
         <div class="panel panel-default text-center">
 		        <div class="panel-heading">
-		          <h3>Manipular XML e XLS</h3>
+		          <h3>Manipular XML e Excel</h3>
 		        </div>
 		        <div class="panel-body">
               <p>
@@ -90,33 +94,37 @@
       <div class="col-sm-4"></div>
       <div class="col-sm-4">
         <div id="inputPreencherPlanilha" ng-show="showme"><!--Row dos inputPreencherPlanilha-->
-          <p id="inputCategria">
-            <label>Categoria</label>
-            <input type="text" class="form-control" placeholder="insira uma Categoria existente no sistema"></input>
-          </p>
-          <p id="inputMarca">
-            <label>Marca</label>
-            <input type="text" class="form-control" placeholder="insira uma Marca existente no sistema"></input>
-          </p>
-          <p id="inputGruproTributario">
-            <label>Grupo Tributário</label>
-            <input type="text" class="form-control" placeholder="insira um Grupo Tributário existente no sistema"></input>
-          </p>
-          <p id="inputCFOP">
-            <label>CFOP</label>
-            <input type="text" class="form-control" placeholder="insira um CFOP existente no sistema"></input>
-          </p>
-          <p id="inputPercentualLucro">
-            <label>Percentual Lucro</label>
-            <input type="text" class="form-control" placeholder="insira um Percentual de Lucro"></input>
-          </p>
-          <p id="inputCoeficiente">
-            <label>Coeficiente</label>
-            <input type="text" class="form-control" placeholder="insira um coeficiente adicional"></input>
-          </p>
-          <p>
-          <button ng-click="#" type="button" class="btn btn-primary">Preencher Planilha</button>
-          </p>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <p id="inputCategria">
+                <label>Categoria</label>
+                <input type="text" class="form-control" placeholder="insira uma Categoria existente no sistema"></input>
+              </p>
+              <p id="inputMarca">
+                <label>Marca</label>
+                <input type="text" class="form-control" placeholder="insira uma Marca existente no sistema"></input>
+              </p>
+              <p id="inputGruproTributario">
+                <label>Grupo Tributário</label>
+                <input type="text" class="form-control" placeholder="insira um Grupo Tributário existente no sistema"></input>
+              </p>
+              <p id="inputCFOP">
+                <label>CFOP</label>
+                <input type="text" class="form-control" placeholder="insira um CFOP existente no sistema"></input>
+              </p>
+              <p id="inputPercentualLucro">
+                <label>Percentual Lucro</label>
+                <input type="text" class="form-control" placeholder="insira um Percentual de Lucro"></input>
+              </p>
+              <p id="inputCoeficiente">
+                <label>Coeficiente</label>
+                <input type="text" class="form-control" placeholder="insira um coeficiente adicional"></input>
+              </p>
+              <p>
+              <button ng-click="#" type="button" class="btn btn-primary">Preencher Planilha</button>
+              </p>
+            </div>
+          </div>
         </div><!--fim da div input-->
       </div>
       <div class="col-sm-4"></div>

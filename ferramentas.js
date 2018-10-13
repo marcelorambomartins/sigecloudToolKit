@@ -37,6 +37,7 @@ myapp.controller('mainController',function($scope,$http){
         }else{
           $scope.ferramenta(action, retorno.inputFile);
         }
+
       }else if(action == "insertNumeroNF" || action == "insertCodigoProduto" || action == "insertQuantProduto" || action == "insertInfoProduto"){
         var retornoXML = $scope.validaXML();
         var retornoXLS = $scope.validaXLS();
@@ -56,6 +57,20 @@ myapp.controller('mainController',function($scope,$http){
 
 
   }//fim da funcão
+
+  
+  $scope.validaExcel(){
+    retorno = "";
+
+    if($('#inputXLS')[0].files.length != 0){
+
+      retorno = {result: "Após clicar em VALIDAR EXCEL"};
+    }else{
+      retorno = {erro: "Você deve carregar um arquivo XLS para validar a Planilha Excel e deixar mais rápida a leitura do arquivo"};
+    }
+
+    return retorno;
+  }
 
   $scope.validaXML = function (){
     retorno = "";
