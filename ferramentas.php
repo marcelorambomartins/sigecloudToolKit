@@ -121,7 +121,7 @@
                 <input type="text" class="form-control" placeholder="insira um coeficiente adicional"></input>
               </p>
               <p>
-              <button ng-click="#" type="button" class="btn btn-primary">Preencher Planilha</button>
+              <button type="button" class="btn btn-primary">Preencher Planilha</button>
               </p>
             </div>
           </div>

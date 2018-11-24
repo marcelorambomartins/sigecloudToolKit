@@ -59,7 +59,7 @@ myapp.controller('mainController',function($scope,$http){
   }//fim da funcão
 
   
-  $scope.validaExcel(){
+    $scope.validaExcel = function () {
     retorno = "";
 
     if($('#inputXLS')[0].files.length != 0){
