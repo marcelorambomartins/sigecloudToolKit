@@ -75,16 +75,24 @@
 		        </div>
 		        <div class="panel-body">
               <p>
-                <button ng-click="validacao('insertCodigoProduto')" type="button" class="btn btn-primary">Inserir Codigo na Descrição do Produto</button>
+                <button ng-click="validacao('insertCodigoProduto')" type="button" class="btn btn-primary" title="Adiciona o código do produto na frete da descrição do produto">
+                  Inserir Codigo na Descrição do Produto
+                </button>
               </p>
               <p>
-                <button ng-click="validacao('insertNumeroNF')" type="button" class="btn btn-primary">Adicionar Numero da NF</button>
+                <button ng-click="validacao('insertNumeroNF')" type="button" class="btn btn-primary" title="Adiciona o número da Nota Fiscal no final da descrição do produto">
+                  Adicionar Numero da NF
+                </button>
               </p>
               <p>
-              <button ng-click="validacao('insertQuantProduto')" type="button" class="btn btn-primary">Adicionar Quantidade de Produtos</button>
+              <button ng-click="validacao('insertQuantProduto')" type="button" class="btn btn-primary" title="Adiciona o Número de produtos no final da descrição do produto">
+                Adicionar Quantidade de Produtos
+              </button>
               </p>
               <p>
-                <button ng-click="validacao('insertInfoProduto')" type="button" class="btn btn-primary">Inserir a Informação Adicional do Produto</button>
+                <button ng-click="validacao('insertInfoProduto')" type="button" class="btn btn-primary" title="Adiciona Informação Adicional do Produtono no final da descrição do produto">
+                  Inserir a Informação Adicional do Produto
+                </button>
               </p>
             </div>
         </div>
@@ -120,8 +128,12 @@
                 <label>Coeficiente</label>
                 <input type="text" class="form-control" placeholder="insira um coeficiente adicional"></input>
               </p>
+              <p class="cnk-arredondar">
+                <input type="checkbox" id="cnk-arredondar-090" checked>
+                <label>Arredondar com 0,90?</label>
+              </p>
               <p>
-              <button type="button" class="btn btn-primary">Preencher Planilha</button>
+              <button type="button" onclick="alert('Função Ainda não implementada')" class="btn btn-primary">Preencher Planilha</button>
               </p>
             </div>
           </div>
